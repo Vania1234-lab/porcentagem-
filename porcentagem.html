@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ação SARESP | Porcentagem · 7º ano</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1422;--panel:#111f32;--line:#31465f;--ink:#f4f7fd;--muted:#bac9da;--mint:#72e5ca;--gold:#ffdb87;--pink:#ffadc1;--blue:#abc5ff}
+:root{color-scheme:dark;--bg:#0b1422;--panel:#111f32;--line:#31465f;--ink:#e1fcff;--muted:#c6dee9;--mint:#80ffe3;--gold:#ffdb87;--pink:#ffadc1;--blue:#abc5ff}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 90% 0%,#182f47,transparent 55%),var(--bg);color:var(--ink);font:clamp(1rem,1.05vw,1.2rem)/1.5 system-ui,sans-serif}
+body{margin:0;background:radial-gradient(ellipse at 90% 0%,#182f47,transparent 55%),var(--bg);color:var(--ink);font:clamp(1.2rem,1.26vw,1.44rem)/1.5 system-ui,sans-serif}
 button,input{font:inherit} button{color:inherit;background:#1c2e45;border:1px solid var(--line);border-radius:.65rem;cursor:pointer;padding:.48rem .8rem}
 button:hover:not(:disabled){border-color:var(--mint)} button:disabled{opacity:.38;cursor:default}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
@@ -15,19 +15,18 @@ button:hover:not(:disabled){border-color:var(--mint)} button:disabled{opacity:.3
 .shell{max-width:1520px;margin:auto;padding:clamp(.8rem,2.5vw,2.3rem)}
 header,.nav,.row,.toolbar,.actions{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
 header{justify-content:space-between;margin-bottom:1.15rem}
-.eyebrow{margin:0;color:var(--mint);letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;font-weight:780}
-h1{font-size:clamp(2.2rem,5vw,4.8rem);margin:0;line-height:1.04;letter-spacing:-.055em}
+.eyebrow{margin:0;color:var(--mint);letter-spacing:.12em;text-transform:uppercase;font-size:0.96rem;font-weight:780}
+h1{font-size:clamp(2.64rem,6vw,5.76rem);margin:0;line-height:1.04;letter-spacing:-.04em}
 .nav{border-block:1px solid var(--line);padding:.68rem 0;margin-bottom:1rem;justify-content:space-between}
 .navGroup{display:flex;flex-wrap:wrap;gap:.35rem}
 .navGroup button{min-width:2.45rem;padding:.35rem .6rem}
 button[aria-current=step],button[aria-pressed=true],.primary{background:var(--mint);border-color:var(--mint);color:#0a2225;font-weight:750}
-.layout{display:grid;gap:1rem}
-.layout.with-board{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
 .panel{border:1px solid var(--line);background:var(--panel);border-radius:1.1rem;padding:clamp(1rem,2.5vw,2.1rem)}
-h2{font-size:clamp(1.55rem,3.2vw,3rem);line-height:1.13;margin:.3rem 0 .95rem;letter-spacing:-.035em}
-h3{margin:0;font-size:1.28rem}
+h2{font-size:clamp(1.86rem,3.84vw,3.6rem);line-height:1.13;margin:.3rem 0 .95rem;letter-spacing:-.035em}
+h3{margin:0;font-size:1.536rem}
 p{margin:.5rem 0 .9rem}
-.tag{display:inline-block;border:1px solid currentColor;border-radius:10rem;padding:.15rem .6rem;font-size:.83rem;font-weight:750}
+.tag{display:inline-block;border:1px solid currentColor;border-radius:10rem;padding:.15rem .6rem;font-size:0.996rem;font-weight:750}
 .facil{color:var(--mint)}.media{color:var(--gold)}.dificil{color:var(--pink)}.muted{color:var(--muted)}
 .lesson-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem);align-items:start}
 .model,.formula,.feedback,.hint{border-radius:.8rem;background:#0d1929;border:1px solid var(--line);padding:.95rem}
@@ -37,44 +36,67 @@ p{margin:.5rem 0 .9rem}
 #grid .filled{background:var(--mint);border-color:var(--mint)}
 input[type=range]{width:100%;accent-color:var(--mint)}
 .controls{margin-top:.7rem}
-.formula{color:var(--mint);font-size:clamp(1.45rem,3vw,2.55rem);font-weight:800;line-height:1.25;margin-top:.85rem;overflow-wrap:anywhere}
+.formula{color:var(--mint);text-shadow:0 0 .55em rgb(77 255 218 / 22%);font-size:clamp(1.74rem,3.6vw,3.06rem);font-weight:800;line-height:1.25;margin-top:.85rem;overflow-wrap:anywhere}
 .review-steps{margin-bottom:1rem}
 #nextStep{margin-top:1rem}
-.adjustment-result{font-size:clamp(1.15rem,2vw,1.6rem);font-weight:750;margin-top:.85rem}
-#lessonText,.prompt{font-size:clamp(1.16rem,2.05vw,1.75rem);max-width:66ch}
+.adjustment-result{font-size:clamp(1.38rem,2.4vw,1.92rem);font-weight:750;margin-top:.85rem}
+#lessonText,.prompt{font-size:clamp(1.392rem,2.46vw,2.1rem);max-width:66ch;font-weight:540}
 .choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.62rem;margin:1.05rem 0}
-.choice{text-align:left;display:flex;align-items:center;gap:.75rem;min-height:3.2rem;padding:.55rem .7rem;font-size:clamp(1.04rem,1.65vw,1.35rem)}
-.choice .letter{display:grid;place-items:center;min-width:1.95rem;height:1.95rem;border-radius:.45rem;background:#0d1929;color:var(--ink);font-weight:800}
+.choice{text-align:left;display:flex;align-items:center;gap:.75rem;min-height:3.2rem;padding:.55rem .7rem;font-size:clamp(1.248rem,1.98vw,1.62rem)}
+.choice .letter{flex:none;display:grid;place-items:center;min-width:1.95rem;height:1.95rem;border-radius:.45rem;background:#0d1929;color:var(--ink);font-weight:800}
 .choice[aria-pressed=true]:not(.right):not(.wrong){background:#29466a;color:var(--ink);border-color:var(--blue)}
 .choice.right{background:#174238;border-color:var(--mint);color:var(--ink)}
 .choice.wrong{background:#512b3d;border-color:var(--pink);color:var(--ink)}
-.feedback{margin-top:.85rem;border-left:4px solid var(--mint);font-size:clamp(1rem,1.55vw,1.35rem)}
+.feedback{margin-top:.85rem;border-left:4px solid var(--mint);font-size:clamp(1.2rem,1.86vw,1.62rem)}
 .feedback p{margin:.3rem 0 0}.hint{margin-top:.75rem;color:var(--gold)}
-table{border-collapse:collapse;text-align:left;margin:.65rem 0;font-size:clamp(1rem,1.55vw,1.25rem)}
+table{border-collapse:collapse;text-align:left;margin:.65rem 0;font-size:clamp(1.2rem,1.86vw,1.5rem)}
 .tiles{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.28rem;max-width:19rem;margin:.75rem 0}
 .tiles span{aspect-ratio:1;border-radius:.2rem;border:1px solid #65809b;background:#20344d}
 .tiles .filled{background:var(--mint);border-color:var(--mint)}
 .diagnostic{color:var(--gold)}
 th,td{padding:.36rem .65rem;border:1px solid var(--line)}th{background:#203650}td{background:#0e1929}
-#board{padding:1rem;position:sticky;top:.5rem}
-#board h2{font-size:1.45rem;margin:0}
+#board{
+  position:fixed;inset:0;margin:0;width:100%;height:100%;height:100dvh;
+  max-width:none;max-height:none;padding:clamp(.55rem,2vw,1.5rem);
+  color:var(--ink);border:0;border-radius:0;overflow:auto;
+}
+#board[open]{display:flex;flex-direction:column}
+#board::backdrop{background:var(--bg)}
+body:has(#board[open]){overflow:hidden}
+#statement{position:relative;isolation:isolate;display:flow-root}
+#statementInk{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#statementInk.inking{pointer-events:auto;touch-action:none;cursor:crosshair}
+.statement-tools{margin:.55rem 0 .3rem}
+#board h2{font-size:1.74rem;margin:0}
 .board-head{justify-content:space-between}
 .toolbar{margin:.65rem 0}
 .toolbar button{padding:.36rem .62rem}
 .swatch{width:2rem;height:2rem;padding:0!important;background:var(--swatch)!important;border:2px solid #152131}
 .swatch[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:1px}
-canvas{display:block;width:100%;aspect-ratio:5/4;touch-action:none;cursor:crosshair;border:1px solid #3a506a;border-radius:.65rem;background-color:#0a1422;background-image:linear-gradient(#263b51 1px,transparent 1px),linear-gradient(90deg,#263b51 1px,transparent 1px);background-size:24px 24px}
-#boardStatus{margin:.45rem 0 0;font-size:.88rem}
-footer{font-size:.83rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--blue)}
-@media(max-width:950px){.layout.with-board{grid-template-columns:1fr}#board{position:static}canvas{aspect-ratio:16/10}}
-@media(max-width:620px){.lesson-grid,.choices{grid-template-columns:1fr}.model{max-width:none}h2{margin-bottom:.6rem}.navGroup button{min-width:2.1rem}.shell{padding:.8rem}.panel{padding:.9rem}}
+#canvas{display:block;width:100%;height:0;min-height:8rem;flex:1;touch-action:none;cursor:crosshair;border:1px solid #3a506a;border-radius:.65rem;background-color:#0a1422;background-image:linear-gradient(#263b51 1px,transparent 1px),linear-gradient(90deg,#263b51 1px,transparent 1px);background-size:24px 24px}
+#boardStatus{margin:.45rem 0 0;font-size:1.056rem}
+footer{font-size:0.996rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--blue)}
+@media(max-width:620px){.lesson-grid,.choices{grid-template-columns:minmax(0,1fr)}.model{max-width:none}h2{margin-bottom:.6rem}.navGroup button{min-width:2.1rem}.shell{padding:.8rem}.panel{padding:.9rem}th,td{padding:.35rem .45rem;overflow-wrap:anywhere}}
+h1,h2{color:var(--mint)}
+@supports (background-clip:text) or (-webkit-background-clip:text){
+  h1,h2{
+    background-image:linear-gradient(180deg,#f0ffff 16%,#b9fff6 43%,#79d6dc 48%,#a6ffe9 57%,#80ffe3 86%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    filter:drop-shadow(0 0 .22em rgb(90 255 218 / 20%));
+  }
+}
+@media(forced-colors:active){
+  h1,h2{background-image:none;color:CanvasText;filter:none}
+}
 </style>
 </head>
 <body>
 <div class="shell">
 <header>
   <div><p class="eyebrow">Ação SARESP · Matemática · 7º ano</p><h1>Porcentagem</h1></div>
-  <div class="actions"><button id="toggleBoard" aria-controls="board" aria-expanded="false">Abrir lousa</button><button id="full" type="button" hidden>Tela cheia</button></div>
+  <div class="actions"><button id="toggleBoard" aria-controls="board" aria-haspopup="dialog">Abrir lousa</button><button id="full" type="button" hidden>Tela cheia</button></div>
 </header>
 <nav class="nav" aria-label="Navegação da aula">
   <div class="navGroup" id="pageNav"></div>
@@ -130,9 +152,17 @@ footer{font-size:.83rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--
     </section>
     <section id="exercise" aria-labelledby="questionTitle" hidden>
       <div class="row"><span class="eyebrow" id="round"></span><span class="tag" id="level"></span></div>
-      <h2 id="questionTitle" tabindex="-1"></h2>
-      <p class="prompt" id="prompt"></p>
-      <div id="data"></div>
+      <div class="row statement-tools" role="group" aria-label="Anotações no enunciado">
+        <button id="statementPen" type="button" aria-pressed="false" aria-controls="statementInk">✎ Caneta no enunciado</button>
+        <button id="statementUndo" type="button" disabled>Desfazer anotação</button>
+        <button id="statementClear" type="button" disabled>Limpar anotações</button>
+      </div>
+      <div id="statement">
+        <h2 id="questionTitle" tabindex="-1"></h2>
+        <p class="prompt" id="prompt"></p>
+        <div id="data"></div>
+        <canvas id="statementInk" aria-label="Área de anotação do enunciado"></canvas>
+      </div>
       <div class="choices" id="choices" role="group" aria-label="Alternativas"></div>
       <div class="actions">
         <button id="hintButton" aria-expanded="false" aria-controls="hint">Mostrar dica</button>
@@ -148,8 +178,9 @@ footer{font-size:.83rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--
       <div class="row" id="answerKey"></div>
     </section>
   </div>
-  <aside id="board" class="panel" aria-labelledby="boardTitle" hidden>
-    <div class="row board-head"><h2 id="boardTitle">Lousa digital</h2><button id="closeBoard">Fechar</button></div>
+</main>
+  <dialog id="board" class="panel" aria-labelledby="boardTitle">
+    <div class="row board-head"><h2 id="boardTitle">Lousa digital</h2><button id="closeBoard" autofocus>Voltar à aula</button></div>
     <div class="toolbar" aria-label="Ferramentas da lousa">
       <button id="pen" aria-pressed="true">Caneta</button><button id="eraser" aria-pressed="false">Borracha</button>
       <button class="swatch" data-color="#f4f7fd" style="--swatch:#f4f7fd" aria-label="Branca" aria-pressed="true"></button>
@@ -160,8 +191,7 @@ footer{font-size:.83rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--
     </div>
     <canvas id="canvas" aria-label="Área de desenho da lousa">Use um navegador com suporte a canvas para desenhar.</canvas>
     <p id="boardStatus" class="muted" aria-live="polite"></p>
-  </aside>
-</main>
+  </dialog>
 <footer>Questões autorais de preparação para o SARESP · <a href="https://midiasstoragesec.blob.core.windows.net/001/2024/10/comunicado-03-2024-saresp.pdf#page=3" target="_blank" rel="noopener">Descritores do SARESP · 7º ano</a> · <a href="https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2023/01/Matem%C3%A1tica-Anos-Finais.pdf" target="_blank" rel="noopener">Currículo Paulista · EF07MA02</a></footer>
 </div>
 <script>
@@ -341,10 +371,13 @@ for(let index = 0; index <= lastPage; index++){
 }
 function go(index,focus = true){
   if(index < 0 || index > lastPage) return;
-  finishStroke();
+  boardDrawing.finishStroke();
+  statementDrawing.finishStroke();
+  if(page !== index) setStatementPen(false);
   page = index;
   renderPage();
   renderBoard();
+  statementDrawing.render();
   if(focus) $(page === 0 ? 'introTitle' : page === lastPage ? 'summaryTitle' : 'questionTitle').focus();
 }
 function renderPage(){
@@ -483,31 +516,127 @@ if(document.fullscreenEnabled && document.documentElement.requestFullscreen){
   });
 }
 
-const canvas = $('canvas');
-const context = canvas.getContext('2d');
-const drawings = Array.from({length:lastPage+1},() => []);
-const swatches = [...$('board').querySelectorAll('[data-color]')];
+function createDrawingSurface(canvas, undo, clear, visible, canDraw, penStyle){
+  const context = canvas.getContext('2d');
+  const drawings = Array.from({length:lastPage+1},() => []);
+  let active = null;
+  let pointer = null;
+
+  function updateControls(){
+    const marks = drawings[page];
+    undo.disabled = marks.length === 0;
+    clear.disabled = marks.length === 0 || marks.at(-1).clear;
+  }
+  function paint(stroke,start,end){
+    const thickness = (stroke.erase ? 18 : stroke.thickness) * (window.devicePixelRatio || 1);
+    context.globalCompositeOperation = stroke.erase ? 'destination-out' : 'source-over';
+    context.strokeStyle = context.fillStyle = stroke.color;
+    context.lineWidth = thickness;
+    context.lineCap = 'round';
+    context.beginPath();
+    if(start === end){
+      context.arc(start.x*canvas.width,start.y*canvas.height,thickness/2,0,2*Math.PI);
+      context.fill();
+    } else {
+      context.moveTo(start.x*canvas.width,start.y*canvas.height);
+      context.lineTo(end.x*canvas.width,end.y*canvas.height);
+      context.stroke();
+    }
+  }
+  function render(){
+    if(!visible() || !canvas.clientWidth || !canvas.clientHeight) return;
+    const ratio = window.devicePixelRatio || 1;
+    const width = Math.max(1,Math.round(canvas.clientWidth*ratio));
+    const height = Math.max(1,Math.round(canvas.clientHeight*ratio));
+    if(canvas.width !== width) canvas.width = width;
+    if(canvas.height !== height) canvas.height = height;
+    context.clearRect(0,0,width,height);
+    drawings[page].forEach(stroke => {
+      if(stroke.clear){
+        context.clearRect(0,0,width,height);
+        return;
+      }
+      paint(stroke,stroke.points[0],stroke.points[0]);
+      for(let index = 1; index < stroke.points.length; index++){
+        paint(stroke,stroke.points[index-1],stroke.points[index]);
+      }
+    });
+    updateControls();
+  }
+  function point(event){
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: (event.clientX - rect.left - canvas.clientLeft) / canvas.clientWidth,
+      y: (event.clientY - rect.top - canvas.clientTop) / canvas.clientHeight
+    };
+  }
+  function finishStroke(){
+    const captured = pointer;
+    active = null;
+    pointer = null;
+    if(captured !== null && canvas.hasPointerCapture(captured)) canvas.releasePointerCapture(captured);
+  }
+  canvas.addEventListener('pointerdown',event => {
+    if(active || event.button !== 0 || !canDraw()) return;
+    event.preventDefault();
+    pointer = event.pointerId;
+    canvas.setPointerCapture(pointer);
+    const start = point(event);
+    active = {...penStyle(),points:[start]};
+    drawings[page].push(active);
+    paint(active,start,start);
+    updateControls();
+  });
+  canvas.addEventListener('pointermove',event => {
+    if(!active || event.pointerId !== pointer) return;
+    const end = point(event);
+    paint(active,active.points.at(-1),end);
+    active.points.push(end);
+  });
+  ['pointerup','pointercancel','lostpointercapture'].forEach(type => canvas.addEventListener(type,event => {
+    if(event.pointerId === pointer) finishStroke();
+  }));
+  undo.onclick = () => {finishStroke();drawings[page].pop();render();};
+  clear.onclick = () => {finishStroke();drawings[page].push({clear:true});render();};
+  new ResizeObserver(render).observe(canvas);
+  return {finishStroke,render};
+}
+
+const board = $('board');
+const swatches = [...board.querySelectorAll('[data-color]')];
 let tool = 'pen';
 let color = swatches[0].dataset.color;
-let active = null;
-let pointer = null;
+let boardFullscreenRequest = null;
 
-function boardIsOpen(){
-  return !$('board').hidden;
+const boardDrawing = createDrawingSurface(
+  $('canvas'),$('undo'),$('clearBoard'),
+  () => board.open,() => board.open,
+  () => ({erase:tool === 'eraser',color,thickness:3.5})
+);
+function renderBoard(){
+  if(!board.open) return;
+  $('boardStatus').textContent = page === 0 ? 'Rascunho da revisão' : page === lastPage ? 'Rascunho do gabarito' : 'Rascunho da questão ' + page;
+  boardDrawing.render();
 }
-function setBoard(open){
-  finishStroke();
-  $('board').hidden = !open;
-  $('layout').classList.toggle('with-board',open);
-  $('toggleBoard').textContent = open ? 'Ocultar lousa' : 'Abrir lousa';
-  $('toggleBoard').setAttribute('aria-expanded',open);
-  if(open){
-    renderBoard();
-    if(window.matchMedia('(max-width: 950px)').matches) $('board').scrollIntoView({block:'start'});
+$('toggleBoard').onclick = () => {
+  if(board.open) return;
+  statementDrawing.finishStroke();
+  board.showModal();
+  renderBoard();
+  if(document.fullscreenEnabled && !document.fullscreenElement && document.documentElement.requestFullscreen){
+    boardFullscreenRequest = document.documentElement.requestFullscreen().then(() => true,() => false);
   }
-}
-$('toggleBoard').onclick = () => setBoard(!boardIsOpen());
-$('closeBoard').onclick = () => {setBoard(false);$('toggleBoard').focus();};
+};
+$('closeBoard').onclick = () => board.close();
+board.addEventListener('close',async () => {
+  boardDrawing.finishStroke();
+  $('toggleBoard').focus();
+  const request = boardFullscreenRequest;
+  boardFullscreenRequest = null;
+  if(request && await request && !board.open && document.fullscreenElement === document.documentElement){
+    await document.exitFullscreen().catch(() => {});
+  }
+});
 function setTool(value){
   tool = value;
   $('pen').setAttribute('aria-pressed',tool === 'pen');
@@ -522,87 +651,25 @@ swatches.forEach(button => {
     setTool('pen');
   };
 });
-function updateBoardControls(){
-  const hasDrawing = drawings[page].length > 0;
-  $('undo').disabled = !hasDrawing;
-  $('clearBoard').disabled = !hasDrawing || drawings[page].at(-1).clear;
+
+let statementPenOn = false;
+const statementInk = $('statementInk');
+const statementDrawing = createDrawingSurface(
+  statementInk,$('statementUndo'),$('statementClear'),
+  () => page > 0 && page < lastPage,() => statementPenOn,
+  () => ({color:'#ffdb87',thickness:3})
+);
+function setStatementPen(on){
+  statementDrawing.finishStroke();
+  statementPenOn = on;
+  $('statementPen').setAttribute('aria-pressed',on);
+  $('statementPen').textContent = on ? '✎ Desativar caneta' : '✎ Caneta no enunciado';
+  statementInk.classList.toggle('inking',on);
 }
-function renderBoard(){
-  if(!boardIsOpen()) return;
-  const ratio = window.devicePixelRatio || 1;
-  const width = Math.max(1,Math.round(canvas.clientWidth*ratio));
-  const height = Math.max(1,Math.round(canvas.clientHeight*ratio));
-  if(canvas.width !== width) canvas.width = width;
-  if(canvas.height !== height) canvas.height = height;
-  context.clearRect(0,0,width,height);
-  drawings[page].forEach(stroke => {
-    if(stroke.clear) context.clearRect(0,0,width,height);
-    else {
-      paint(stroke,stroke.points[0],stroke.points[0]);
-      for(let index = 1; index < stroke.points.length; index++){
-        paint(stroke,stroke.points[index-1],stroke.points[index]);
-      }
-    }
-  });
-  updateBoardControls();
-  $('boardStatus').textContent = page === 0 ? 'Rascunho da revisão' : page === lastPage ? 'Rascunho do gabarito' : 'Rascunho da questão ' + page;
-}
-function paint(stroke,start,end){
-  const width = canvas.width;
-  const height = canvas.height;
-  const thickness = (stroke.erase ? 18 : 3.5) * (window.devicePixelRatio || 1);
-  context.globalCompositeOperation = stroke.erase ? 'destination-out' : 'source-over';
-  context.strokeStyle = context.fillStyle = stroke.color;
-  context.lineWidth = thickness;
-  context.lineCap = 'round';
-  context.beginPath();
-  if(start === end){
-    context.arc(start.x*width,start.y*height,thickness/2,0,2*Math.PI);
-    context.fill();
-  } else {
-    context.moveTo(start.x*width,start.y*height);
-    context.lineTo(end.x*width,end.y*height);
-    context.stroke();
-  }
-}
-function point(event){
-  const rect = canvas.getBoundingClientRect();
-  return {
-    x: (event.clientX - rect.left - canvas.clientLeft) / canvas.clientWidth,
-    y: (event.clientY - rect.top - canvas.clientTop) / canvas.clientHeight
-  };
-}
-canvas.addEventListener('pointerdown',event => {
-  if(active || event.button !== 0) return;
-  event.preventDefault();
-  pointer = event.pointerId;
-  canvas.setPointerCapture(pointer);
-  const start = point(event);
-  active = {erase:tool === 'eraser',color,points:[start]};
-  drawings[page].push(active);
-  paint(active,start,start);
-  updateBoardControls();
-});
-canvas.addEventListener('pointermove',event => {
-  if(!active || event.pointerId !== pointer) return;
-  const end = point(event);
-  paint(active,active.points.at(-1),end);
-  active.points.push(end);
-});
-function finishStroke(){
-  const captured = pointer;
-  active = null;
-  pointer = null;
-  if(captured !== null && canvas.hasPointerCapture(captured)) canvas.releasePointerCapture(captured);
-}
-['pointerup','pointercancel','lostpointercapture'].forEach(type => canvas.addEventListener(type,event => {
-  if(event.pointerId === pointer) finishStroke();
-}));
-$('undo').onclick = () => {finishStroke();drawings[page].pop();renderBoard();};
-$('clearBoard').onclick = () => {finishStroke();drawings[page].push({clear:true});renderBoard();};
-new ResizeObserver(renderBoard).observe(canvas);
+$('statementPen').onclick = () => setStatementPen(!statementPenOn);
+
 document.addEventListener('keydown',event => {
-  if(event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+  if(board.open || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
   if(event.target.matches('button,input,textarea,select,a')) return;
   if(event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
     event.preventDefault();
