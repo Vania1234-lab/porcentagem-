@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ação SARESP | Porcentagem · 7º ano</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1422;--panel:#111f32;--line:#31465f;--ink:#f4f7fd;--muted:#bac9da;--mint:#72e5ca;--gold:#ffdb87;--pink:#ffadc1;--blue:#abc5ff}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 90% 0%,#182f47,transparent 55%),var(--bg);color:var(--ink);font:clamp(1rem,1.05vw,1.2rem)/1.5 system-ui,sans-serif}
+button,input{font:inherit} button{color:inherit;background:#1c2e45;border:1px solid var(--line);border-radius:.65rem;cursor:pointer;padding:.48rem .8rem}
+button:hover:not(:disabled){border-color:var(--mint)} button:disabled{opacity:.38;cursor:default}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+[hidden]{display:none!important}
+.shell{max-width:1520px;margin:auto;padding:clamp(.8rem,2.5vw,2.3rem)}
+header,.nav,.row,.toolbar,.actions{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+header{justify-content:space-between;margin-bottom:1.15rem}
+.eyebrow{margin:0;color:var(--mint);letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;font-weight:780}
+h1{font-size:clamp(2.2rem,5vw,4.8rem);margin:0;line-height:1.04;letter-spacing:-.055em}
+.nav{border-block:1px solid var(--line);padding:.68rem 0;margin-bottom:1rem;justify-content:space-between}
+.navGroup{display:flex;flex-wrap:wrap;gap:.35rem}
+.navGroup button{min-width:2.45rem;padding:.35rem .6rem}
+button[aria-current=step],button[aria-pressed=true],.primary{background:var(--mint);border-color:var(--mint);color:#0a2225;font-weight:750}
+.layout{display:grid;gap:1rem}
+.layout.with-board{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);align-items:start}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:1.1rem;padding:clamp(1rem,2.5vw,2.1rem)}
+h2{font-size:clamp(1.55rem,3.2vw,3rem);line-height:1.13;margin:.3rem 0 .95rem;letter-spacing:-.035em}
+h3{margin:0;font-size:1.28rem}
+p{margin:.5rem 0 .9rem}
+.tag{display:inline-block;border:1px solid currentColor;border-radius:10rem;padding:.15rem .6rem;font-size:.83rem;font-weight:750}
+.facil{color:var(--mint)}.media{color:var(--gold)}.dificil{color:var(--pink)}.muted{color:var(--muted)}
+.lesson-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem);align-items:start}
+.model,.formula,.feedback,.hint{border-radius:.8rem;background:#0d1929;border:1px solid var(--line);padding:.95rem}
+.model{max-width:32rem}
+#grid{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(2px,.45vw,5px);margin:0 auto .6rem;max-width:290px}
+#grid span{aspect-ratio:1;border:1px solid #3c5874;background:#20344d;border-radius:3px}
+#grid .filled{background:var(--mint);border-color:var(--mint)}
+input[type=range]{width:100%;accent-color:var(--mint)}
+.controls{margin-top:.7rem}
+.formula{color:var(--mint);font-size:clamp(1.45rem,3vw,2.55rem);font-weight:800;line-height:1.25;margin-top:.85rem;overflow-wrap:anywhere}
+.review-steps{margin-bottom:1rem}
+#nextStep{margin-top:1rem}
+.adjustment-result{font-size:clamp(1.15rem,2vw,1.6rem);font-weight:750;margin-top:.85rem}
+#lessonText,.prompt{font-size:clamp(1.16rem,2.05vw,1.75rem);max-width:66ch}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.62rem;margin:1.05rem 0}
+.choice{text-align:left;display:flex;align-items:center;gap:.75rem;min-height:3.2rem;padding:.55rem .7rem;font-size:clamp(1.04rem,1.65vw,1.35rem)}
+.choice .letter{display:grid;place-items:center;min-width:1.95rem;height:1.95rem;border-radius:.45rem;background:#0d1929;color:var(--ink);font-weight:800}
+.choice[aria-pressed=true]:not(.right):not(.wrong){background:#29466a;color:var(--ink);border-color:var(--blue)}
+.choice.right{background:#174238;border-color:var(--mint);color:var(--ink)}
+.choice.wrong{background:#512b3d;border-color:var(--pink);color:var(--ink)}
+.feedback{margin-top:.85rem;border-left:4px solid var(--mint);font-size:clamp(1rem,1.55vw,1.35rem)}
+.feedback p{margin:.3rem 0 0}.hint{margin-top:.75rem;color:var(--gold)}
+table{border-collapse:collapse;text-align:left;margin:.65rem 0;font-size:clamp(1rem,1.55vw,1.25rem)}
+.tiles{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:.28rem;max-width:19rem;margin:.75rem 0}
+.tiles span{aspect-ratio:1;border-radius:.2rem;border:1px solid #65809b;background:#20344d}
+.tiles .filled{background:var(--mint);border-color:var(--mint)}
+.diagnostic{color:var(--gold)}
+th,td{padding:.36rem .65rem;border:1px solid var(--line)}th{background:#203650}td{background:#0e1929}
+#board{padding:1rem;position:sticky;top:.5rem}
+#board h2{font-size:1.45rem;margin:0}
+.board-head{justify-content:space-between}
+.toolbar{margin:.65rem 0}
+.toolbar button{padding:.36rem .62rem}
+.swatch{width:2rem;height:2rem;padding:0!important;background:var(--swatch)!important;border:2px solid #152131}
+.swatch[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:1px}
+canvas{display:block;width:100%;aspect-ratio:5/4;touch-action:none;cursor:crosshair;border:1px solid #3a506a;border-radius:.65rem;background-color:#0a1422;background-image:linear-gradient(#263b51 1px,transparent 1px),linear-gradient(90deg,#263b51 1px,transparent 1px);background-size:24px 24px}
+#boardStatus{margin:.45rem 0 0;font-size:.88rem}
+footer{font-size:.83rem;margin-top:1rem;color:var(--muted)}footer a{color:var(--blue)}
+@media(max-width:950px){.layout.with-board{grid-template-columns:1fr}#board{position:static}canvas{aspect-ratio:16/10}}
+@media(max-width:620px){.lesson-grid,.choices{grid-template-columns:1fr}.model{max-width:none}h2{margin-bottom:.6rem}.navGroup button{min-width:2.1rem}.shell{padding:.8rem}.panel{padding:.9rem}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+  <div><p class="eyebrow">Ação SARESP · Matemática · 7º ano</p><h1>Porcentagem</h1></div>
+  <div class="actions"><button id="toggleBoard" aria-controls="board" aria-expanded="false">Abrir lousa</button><button id="full" type="button" hidden>Tela cheia</button></div>
+</header>
+<nav class="nav" aria-label="Navegação da aula">
+  <div class="navGroup" id="pageNav"></div>
+  <div class="actions"><button id="prev">← Anterior</button><button id="next">Próxima →</button></div>
+</nav>
+<main class="layout" id="layout">
+  <div class="panel">
+    <section id="intro" aria-labelledby="introTitle">
+      <h2 id="introTitle" tabindex="-1">Da fração à porcentagem</h2>
+      <div class="row review-steps" id="steps" aria-label="Etapas da explicação">
+        <button data-step="0" aria-pressed="true">1. Fração</button><button data-step="1" aria-pressed="false">2. Decimal</button><button data-step="2" aria-pressed="false">3. Porcentagem</button><button data-step="3" aria-pressed="false">4. Acréscimo e decréscimo</button>
+      </div>
+      <div class="lesson-grid" id="representations">
+        <div class="model">
+          <div id="grid" aria-hidden="true"></div>
+          <label for="parts"><strong id="count">25</strong> de 100 quadradinhos pintados</label>
+          <input id="parts" type="range" min="0" max="100" value="25" aria-label="Quantidade de quadradinhos pintados">
+          <div class="row controls" id="samples" aria-label="Exemplos">
+            <button data-value="10">10 de 100</button><button data-value="25">25 de 100</button><button data-value="50">50 de 100</button><button data-value="75">75 de 100</button>
+          </div>
+        </div>
+        <div>
+          <div id="lesson" aria-live="polite">
+            <h3 class="lesson-title" id="lessonTitle"></h3>
+            <div class="formula" id="formula"></div>
+            <p id="lessonText"></p>
+            <p class="muted" id="example"></p>
+          </div>
+        </div>
+      </div>
+      <div class="lesson-grid" id="adjustments" hidden>
+        <div class="model">
+          <h3>Valor original de R$ 200,00</h3>
+          <p><strong>100% = 100/100 = 1</strong>. O fator 1 representa um inteiro, ou seja, o valor original completo.</p>
+          <div class="row" id="adjustmentModes" role="group" aria-label="Tipo de variação">
+            <button type="button" data-direction="1" aria-pressed="true">Acréscimo</button>
+            <button type="button" data-direction="-1" aria-pressed="false">Decréscimo</button>
+          </div>
+          <div class="controls">
+            <label for="adjustmentRate">Taxa de variação de <strong id="adjustmentRateValue">15%</strong></label>
+            <input id="adjustmentRate" type="range" min="0" max="100" value="15">
+          </div>
+        </div>
+        <div aria-live="polite">
+          <h3 id="adjustmentTitle"></h3>
+          <p id="adjustmentExplanation"></p>
+          <div class="formula" id="adjustmentFactor"></div>
+          <p class="muted" id="adjustmentDecimal"></p>
+          <p id="adjustmentResult" class="adjustment-result"></p>
+        </div>
+      </div>
+      <button id="nextStep" class="primary">Ir para decimal →</button>
+    </section>
+    <section id="exercise" aria-labelledby="questionTitle" hidden>
+      <div class="row"><span class="eyebrow" id="round"></span><span class="tag" id="level"></span></div>
+      <h2 id="questionTitle" tabindex="-1"></h2>
+      <p class="prompt" id="prompt"></p>
+      <div id="data"></div>
+      <div class="choices" id="choices" role="group" aria-label="Alternativas"></div>
+      <div class="actions">
+        <button id="hintButton" aria-expanded="false" aria-controls="hint">Mostrar dica</button>
+        <button id="resolve" class="primary" aria-expanded="false" aria-controls="feedback">Revelar resolução</button>
+      </div>
+      <div class="hint" id="hint" hidden></div>
+      <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+    </section>
+    <section id="summary" aria-labelledby="summaryTitle" hidden>
+      <h2 id="summaryTitle" tabindex="-1">Gabarito das 9 questões</h2>
+      <p id="score"></p>
+      <p class="muted">Selecione uma questão para rever a resolução.</p>
+      <div class="row" id="answerKey"></div>
+    </section>
+  </div>
+  <aside id="board" class="panel" aria-labelledby="boardTitle" hidden>
+    <div class="row board-head"><h2 id="boardTitle">Lousa digital</h2><button id="closeBoard">Fechar</button></div>
+    <div class="toolbar" aria-label="Ferramentas da lousa">
+      <button id="pen" aria-pressed="true">Caneta</button><button id="eraser" aria-pressed="false">Borracha</button>
+      <button class="swatch" data-color="#f4f7fd" style="--swatch:#f4f7fd" aria-label="Branca" aria-pressed="true"></button>
+      <button class="swatch" data-color="#72e5ca" style="--swatch:#72e5ca" aria-label="Verde" aria-pressed="false"></button>
+      <button class="swatch" data-color="#ffdb87" style="--swatch:#ffdb87" aria-label="Amarela" aria-pressed="false"></button>
+      <button class="swatch" data-color="#ffadc1" style="--swatch:#ffadc1" aria-label="Rosa" aria-pressed="false"></button>
+      <button id="undo" disabled>Desfazer</button><button id="clearBoard" disabled>Limpar</button>
+    </div>
+    <canvas id="canvas" aria-label="Área de desenho da lousa">Use um navegador com suporte a canvas para desenhar.</canvas>
+    <p id="boardStatus" class="muted" aria-live="polite"></p>
+  </aside>
+</main>
+<footer>Questões autorais de preparação para o SARESP · <a href="https://midiasstoragesec.blob.core.windows.net/001/2024/10/comunicado-03-2024-saresp.pdf#page=3" target="_blank" rel="noopener">Descritores do SARESP · 7º ano</a> · <a href="https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2023/01/Matem%C3%A1tica-Anos-Finais.pdf" target="_blank" rel="noopener">Currículo Paulista · EF07MA02</a></footer>
+</div>
+<script>
+const questions = [
+  {
+    title:'Painel de azulejos', level:'Fácil',
+    prompt:'Observe a figura que representa um painel de azulejos de mesmo tamanho. Qual porcentagem dos azulejos está destacada em verde?',
+    tiles:{total:20,filled:7},
+    options:['7%','20%','35%','65%'], answer:2,
+    hint:'Conte os azulejos verdes e compare com o total de azulejos.',
+    solution:'7 dos 20 azulejos estão em verde. Multiplicando o numerador e o denominador de 7/20 por 5, obtemos 35/100 = 35%.',
+    distractors:['7 é a quantidade destacada. A porcentagem precisa considerar os 20 azulejos do painel.','20 é a quantidade total de azulejos. Ela representa 100% do painel.',null,'65% correspondem aos 13 azulejos que ficaram sem destaque.']
+  },
+  {
+    title:'Desconto na feira', level:'Média',
+    prompt:'Um tênis cujo preço era R$ 120,00 foi vendido com 15% de desconto. Qual foi o valor pago pelo tênis?',
+    options:['R$ 18,00','R$ 102,00','R$ 105,00','R$ 138,00'], answer:1,
+    hint:'Calcule quanto o cliente deixou de pagar e subtraia esse valor do preço inicial.',
+    solution:'15% de R$ 120,00 correspondem a 0,15 × 120 = R$ 18,00. O valor pago foi R$ 120,00 − R$ 18,00 = R$ 102,00. Pelo fator decimal, 100% − 15% = 85% = 0,85. Então, 120 × 0,85 = 102.',
+    distractors:['R$ 18,00 é o valor do desconto.',null,'Subtrair R$ 15,00 equivale a tratar a taxa de 15% como um valor em reais.','Somar R$ 18,00 ao preço inicial daria o valor com um acréscimo.']
+  },
+  {
+    title:'Meta da campanha', level:'Difícil',
+    prompt:'Uma turma arrecadou 84 kg de alimentos em uma campanha. Essa quantidade ficou 30% abaixo da meta. Qual era a meta de arrecadação?',
+    options:['58,8 kg','109,2 kg','114 kg','120 kg'], answer:3,
+    hint:'Se faltaram 30% da meta, qual porcentagem da meta os 84 kg representam?',
+    solution:'Foram arrecadados 100% − 30% = 70% da meta. Se 70% são 84 kg, 10% correspondem a 12 kg. Assim, 100% correspondem a 10 × 12 = 120 kg.',
+    distractors:['Esse resultado é 70% de 84 kg. Os 84 kg já representam 70% da meta.','Esse resultado soma 30% de 84 kg. A base dos 30% é a meta.','30 é um percentual da meta. Somar 30 kg aos 84 kg dá outra quantidade.',null]
+  },
+  {
+    title:'Pesquisa de transporte', level:'Fácil',
+    prompt:'Em uma pesquisa, a proporção de estudantes que vão de bicicleta para a escola foi representada pelo número 0,08. Qual é a porcentagem correspondente?',
+    options:['8%','0,8%','0,08%','80%'], answer:0,
+    hint:'Quantos centésimos há em 0,08?',
+    solution:'0,08 significa 8 centésimos. Como 0,08 = 8/100, a porcentagem correspondente é 8%.',
+    distractors:[null,'0,8% equivale a 0,008. Para converter 0,08, multiplique por 100.','Acrescentar o símbolo % a 0,08 muda o valor do número.','80% equivale a 0,80. Observe o zero na casa dos décimos em 0,08.']
+  },
+  {
+    title:'Inscrições na oficina', level:'Média',
+    prompt:'A tabela apresenta o número de vagas e de inscrições confirmadas para três oficinas. Que porcentagem das vagas da oficina de Robótica ainda está disponível?',
+    table:[['Oficina','Vagas','Inscrições confirmadas'],['Robótica','40','28'],['Música','30','24'],['Teatro','50','40']],
+    tableLabel:'Vagas e inscrições confirmadas por oficina',
+    options:['12%','25%','30%','70%'], answer:2,
+    hint:'Compare as vagas disponíveis em Robótica com o total de vagas dessa mesma oficina.',
+    solution:'Na Robótica, restam 40 − 28 = 12 vagas. A razão 12/40 equivale a 0,30. Portanto, 30% das vagas dessa oficina ainda estão disponíveis.',
+    distractors:['12 é o número de vagas disponíveis. Para obter a porcentagem, compare 12 com 40.','25% correspondem a 10 das 40 vagas. Ainda há 12 vagas disponíveis.',null,'70% correspondem às vagas já preenchidas, pois 28/40 = 0,70.']
+  },
+  {
+    title:'Duas ofertas de mochila', level:'Difícil',
+    prompt:'A loja A vende uma mochila de R$ 150,00 com 20% de desconto e cobra R$ 18,00 de entrega. A loja B vende a mesma mochila por R$ 160,00 com 15% de desconto e entrega gratuita. Considerando o desconto e a entrega, qual oferta custa menos e qual é a diferença?',
+    options:['Loja A, R$ 2,00 a menos.','Loja A, R$ 16,00 a menos.','Loja B, R$ 2,00 a menos.','Loja B, R$ 16,00 a menos.'], answer:2,
+    hint:'Encontre o preço com desconto de cada mochila. Depois inclua a entrega onde houver cobrança.',
+    solution:'Na loja A, o desconto é de R$ 30,00. Com a entrega, o total é 150 − 30 + 18 = R$ 138,00. Na loja B, o desconto é de R$ 24,00 e o total é 160 − 24 = R$ 136,00. A loja B custa R$ 2,00 a menos.',
+    distractors:['A diferença é R$ 2,00. Compare os totais de R$ 138,00 na loja A e R$ 136,00 na loja B.','Essa é a diferença entre os preços com desconto antes de incluir a entrega.',null,'Sem a entrega, a diferença é de R$ 16,00 a favor da loja A. Ao somar os R$ 18,00 do frete, a loja B passa a custar R$ 2,00 a menos.']
+  },
+  {
+    title:'Livros de aventura', level:'Fácil',
+    prompt:'Uma biblioteca recebeu 150 livros novos. Desse total, 40% são livros de aventura. Quantos livros de aventura a biblioteca recebeu?',
+    options:['40','60','90','110'], answer:1,
+    hint:'Calcule 10% de 150 e use esse resultado para obter 40%.',
+    solution:'10% de 150 correspondem a 15 livros. Como 40% são quatro vezes 10%, foram recebidos 4 × 15 = 60 livros de aventura.',
+    distractors:['40 é a porcentagem informada. Use o total de 150 livros para calcular a quantidade.',null,'90 livros correspondem a 60% do total, a parte que pertence a outros gêneros.','Subtrair 40 de 150 trata o percentual como uma quantidade fixa de livros.']
+  },
+  {
+    title:'Reajuste do ingresso', level:'Média',
+    prompt:'Um ingresso para uma apresentação custava R$ 64,00. O preço foi reajustado em 12,5% para cima. Qual é o preço do ingresso após o reajuste?',
+    options:['R$ 56,00','R$ 64,00','R$ 76,50','R$ 72,00'], answer:3,
+    hint:'12,5% é metade de 25%. Calcule o acréscimo e some ao preço original.',
+    solution:'25% de R$ 64,00 correspondem a R$ 16,00. A metade, que é 12,5%, corresponde a R$ 8,00. O novo preço é R$ 64,00 + R$ 8,00 = R$ 72,00. Pelo fator decimal, 100% + 12,5% = 112,5% = 1,125. Então, 64 × 1,125 = 72.',
+    distractors:['R$ 56,00 é o resultado de um desconto de 12,5%.','R$ 64,00 é o preço antes do reajuste.','R$ 76,50 resulta de somar R$ 12,50. O acréscimo de 12,5% precisa ser calculado sobre R$ 64,00.',null]
+  },
+  {
+    title:'Participação nas oficinas', level:'Difícil',
+    prompt:'A tabela apresenta os inscritos em duas oficinas e a porcentagem que compareceu em cada uma. Cada pessoa se inscreveu em apenas uma oficina. Qual porcentagem do total de inscritos compareceu?',
+    table:[['Oficina','Inscritos','Comparecimento'],['Robótica','60','80%'],['Desenho','140','50%']],
+    tableLabel:'Inscritos e porcentagem de comparecimento por oficina',
+    options:['50%','59%','65%','80%'], answer:1,
+    hint:'Calcule quantas pessoas compareceram a cada oficina e compare a soma com o total de inscritos.',
+    solution:'Compareceram 80% de 60 = 48 pessoas em Robótica e 50% de 140 = 70 em Desenho. São 118 presentes entre 200 inscritos. Logo, 118/200 = 59/100 = 59%.',
+    distractors:['50% é a taxa de comparecimento apenas da oficina de Desenho.',null,'65% é a média simples das duas taxas. Como os números de inscritos são diferentes, some as quantidades de presentes e divida pelo total de inscritos.','80% é a taxa de comparecimento apenas da oficina de Robótica.']
+  }
+];
+
+const $ = id => document.getElementById(id);
+const letters = ['A','B','C','D'];
+const selections = Array(questions.length).fill(null);
+const revealed = Array(questions.length).fill(false);
+const hints = Array(questions.length).fill(false);
+const lastPage = questions.length + 1;
+let page = 0;
+let step = 0;
+
+const gridCells = Array.from({length:100}, () => document.createElement('span'));
+$('grid').append(...gridCells);
+const decimalFormat = new Intl.NumberFormat('pt-BR', {maximumFractionDigits:2});
+const gcd = (a,b) => b === 0 ? a : gcd(b,a % b);
+const wholePercent = 100;
+const originalValue = 200;
+const adjustmentStep = 3;
+const moneyFormat = new Intl.NumberFormat('pt-BR', {style:'currency',currency:'BRL'});
+let direction = 1;
+
+function updateAdjustment(){
+  const rate = Number($('adjustmentRate').value);
+  const adjustedPercent = wholePercent + direction * rate;
+  const factor = adjustedPercent / wholePercent;
+  const isIncrease = direction === 1;
+  $('adjustmentModes').querySelectorAll('button').forEach(button => {
+    button.setAttribute('aria-pressed',Number(button.dataset.direction) === direction);
+  });
+  $('adjustmentRateValue').textContent = rate + '%';
+  $('adjustmentRate').setAttribute('aria-valuetext',rate + ' por cento');
+  $('adjustmentTitle').textContent = isIncrease ? 'Acréscimo: somar à base de 100%' : 'Decréscimo: subtrair da base de 100%';
+  $('adjustmentExplanation').textContent = isIncrease
+    ? 'Some a taxa aos 100% do valor original. Depois, escreva a porcentagem resultante na forma decimal para multiplicar.'
+    : 'Subtraia a taxa dos 100% do valor original. Depois, escreva a porcentagem restante na forma decimal para multiplicar.';
+  $('adjustmentFactor').textContent = '100% ' + (isIncrease ? '+' : '−') + ' ' + rate + '% = ' + adjustedPercent + '% = ' + decimalFormat.format(factor);
+  $('adjustmentDecimal').textContent = 'Fator decimal: 1 ' + (isIncrease ? '+' : '−') + ' ' + decimalFormat.format(rate / wholePercent) + ' = ' + decimalFormat.format(factor);
+  $('adjustmentResult').textContent = moneyFormat.format(originalValue) + ' × ' + decimalFormat.format(factor) + ' = ' + moneyFormat.format(originalValue * factor);
+}
+function updateLesson(){
+  const showAdjustments = step === adjustmentStep;
+  $('steps').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed',Number(button.dataset.step) === step));
+  $('representations').hidden = showAdjustments;
+  $('adjustments').hidden = !showAdjustments;
+  $('nextStep').textContent = ['Ir para decimal →','Ir para porcentagem →','Ir para acréscimo e decréscimo →','Começar as questões →'][step];
+  if(showAdjustments){
+    updateAdjustment();
+    return;
+  }
+
+  const amount = Number($('parts').value);
+  const divisor = gcd(amount,100);
+  const fraction = divisor === 1 ? '' : amount/divisor + '/' + 100/divisor + ' = ';
+  const decimal = decimalFormat.format(amount/100);
+  $('count').textContent = amount;
+  gridCells.forEach((cell,index) => cell.classList.toggle('filled',index < amount));
+  $('samples').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', Number(button.dataset.value) === amount));
+  $('lessonTitle').textContent = ['Que parte está pintada?','Quanto vale essa divisão?','Quantos estão pintados a cada 100?'][step];
+  $('formula').textContent = [amount + '/100',amount + ' ÷ 100 = ' + decimal,fraction + amount + '/100 = ' + decimal + ' = ' + amount + '%'][step];
+  $('lessonText').textContent = [
+    'O denominador 100 indica o total de partes iguais. O numerador ' + amount + ' indica quantas partes estão pintadas. Arraste o controle abaixo da malha para mudar essa quantidade.',
+    'Divida o numerador pelo denominador para escrever a fração como decimal.',
+    'Porcentagem significa “por cento”. Multiplique o decimal por 100 para obter o número que acompanha o símbolo %. A malha inteira representa 100/100 = 1 = 100%.'
+  ][step];
+  $('example').textContent = step === 2 ? 'Para calcular ' + amount + '% de 200, faça ' + decimal + ' × 200 = ' + amount*2 + '.' : '';
+}
+$('parts').addEventListener('input',updateLesson);
+$('samples').addEventListener('click',event => {
+  const button = event.target.closest('button');
+  if(!button) return;
+  $('parts').value = button.dataset.value;
+  updateLesson();
+});
+$('steps').addEventListener('click',event => {
+  const button = event.target.closest('button');
+  if(!button) return;
+  step = Number(button.dataset.step);
+  updateLesson();
+});
+$('adjustmentRate').addEventListener('input',updateAdjustment);
+$('adjustmentModes').addEventListener('click',event => {
+  const button = event.target.closest('button[data-direction]');
+  if(!button) return;
+  direction = Number(button.dataset.direction);
+  updateAdjustment();
+});
+$('nextStep').onclick = () => { if(step === adjustmentStep) go(1); else {step++;updateLesson();} };
+
+const pageNav = $('pageNav');
+for(let index = 0; index <= lastPage; index++){
+  const button = document.createElement('button');
+  button.textContent = index === 0 ? 'Revisão' : index === lastPage ? 'Gabarito' : index;
+  if(index > 0 && index < lastPage) button.setAttribute('aria-label','Questão ' + index + ', nível ' + questions[index-1].level.toLowerCase());
+  button.onclick = () => go(index);
+  pageNav.append(button);
+}
+function go(index,focus = true){
+  if(index < 0 || index > lastPage) return;
+  finishStroke();
+  page = index;
+  renderPage();
+  renderBoard();
+  if(focus) $(page === 0 ? 'introTitle' : page === lastPage ? 'summaryTitle' : 'questionTitle').focus();
+}
+function renderPage(){
+  $('intro').hidden = page !== 0;
+  $('exercise').hidden = page === 0 || page === lastPage;
+  $('summary').hidden = page !== lastPage;
+  $('prev').disabled = page === 0;
+  $('next').disabled = page === lastPage;
+  $('next').textContent = page === questions.length ? 'Gabarito →' : 'Próxima →';
+  [...pageNav.children].forEach((button,index) => index === page ? button.setAttribute('aria-current','step') : button.removeAttribute('aria-current'));
+  if(page === 0) updateLesson();
+  else if(page === lastPage) renderSummary();
+  else renderQuestion();
+}
+function renderQuestion(){
+  const index = page-1;
+  const item = questions[index];
+  $('round').textContent = 'Rodada ' + Math.ceil(page/3) + ' · Questão ' + page + ' de ' + questions.length;
+  $('level').textContent = item.level;
+  $('level').className = 'tag ' + ['facil','media','dificil'][index % 3];
+  $('questionTitle').textContent = item.title;
+  $('prompt').textContent = item.prompt;
+  $('data').replaceChildren();
+  if(item.tiles){
+    const panel = document.createElement('div');
+    panel.className = 'tiles';
+    panel.setAttribute('role','img');
+    panel.setAttribute('aria-label', 'Painel com ' + item.tiles.total + ' azulejos, dos quais ' + item.tiles.filled + ' estão em verde.');
+    for(let index = 0; index < item.tiles.total; index++){
+      const tile = document.createElement('span');
+      tile.setAttribute('aria-hidden','true');
+      tile.classList.toggle('filled',index < item.tiles.filled);
+      panel.append(tile);
+    }
+    $('data').append(panel);
+  }
+  if(item.table){
+    const table = document.createElement('table');
+    table.setAttribute('aria-label',item.tableLabel);
+    const headerRow = table.createTHead().insertRow();
+    item.table[0].forEach(value => {
+      const cell = document.createElement('th');
+      cell.scope = 'col';
+      cell.textContent = value;
+      headerRow.append(cell);
+    });
+    const body = table.createTBody();
+    item.table.slice(1).forEach(values => {
+      const row = body.insertRow();
+      row.append(...values.map((value,column) => {
+        const cell = document.createElement(column === 0 ? 'th' : 'td');
+        if(column === 0) cell.scope = 'row';
+        cell.textContent = value;
+        return cell;
+      }));
+    });
+    $('data').append(table);
+  }
+  $('choices').replaceChildren(...item.options.map((option,choice) => {
+    const button = document.createElement('button');
+    button.className = 'choice';
+    const label = document.createElement('span');
+    label.className = 'letter';
+    label.textContent = letters[choice];
+    button.append(label,document.createTextNode(option));
+    button.onclick = () => {
+      if(revealed[index]) return;
+      selections[index] = selections[index] === choice ? null : choice;
+      updateQuestionState();
+    };
+    return button;
+  }));
+  updateQuestionState();
+}
+function updateQuestionState(){
+  const index = page-1;
+  const item = questions[index];
+  const selection = selections[index];
+  const show = revealed[index];
+  [...$('choices').children].forEach((button,choice) => {
+    button.setAttribute('aria-pressed',selection === choice);
+    button.setAttribute('aria-disabled',show);
+    button.classList.toggle('right',show && item.answer === choice);
+    button.classList.toggle('wrong',show && selection === choice && item.answer !== choice);
+  });
+  $('hint').hidden = !hints[index];
+  $('hint').textContent = item.hint;
+  $('hintButton').setAttribute('aria-expanded',hints[index]);
+  $('hintButton').textContent = hints[index] ? 'Ocultar dica' : 'Mostrar dica';
+  $('resolve').setAttribute('aria-expanded',show);
+  $('resolve').textContent = show ? 'Ocultar resolução' : 'Revelar resolução';
+  $('feedback').hidden = !show;
+  if(show){
+    const title = document.createElement('strong');
+    const prefix = selection === null ? '' : selection === item.answer ? 'Você acertou! ' : 'Você marcou ' + letters[selection] + '. ';
+    title.textContent = prefix + 'Resposta ' + letters[item.answer] + ' · ' + item.options[item.answer];
+    const reasoning = document.createElement('p');
+    reasoning.textContent = item.solution;
+    $('feedback').replaceChildren(title,reasoning);
+    const diagnostic = item.distractors[selection];
+    if(diagnostic){
+      const note = document.createElement('p');
+      note.className = 'diagnostic';
+      note.textContent = diagnostic;
+      $('feedback').append(note);
+    }
+  }
+}
+function renderSummary(){
+  const checked = selections.filter(selection => selection !== null);
+  const correct = questions.filter((item,index) => selections[index] === item.answer).length;
+  $('score').textContent = checked.length ? 'Você acertou ' + correct + ' de ' + checked.length + ' questões marcadas.' : '';
+  $('answerKey').replaceChildren(...questions.map((item,index) => {
+    const button = document.createElement('button');
+    button.textContent = (index+1) + ' · ' + letters[item.answer];
+    button.onclick = () => {revealed[index] = true;go(index+1);};
+    return button;
+  }));
+}
+$('prev').onclick = () => go(page-1);
+$('next').onclick = () => go(page+1);
+$('hintButton').onclick = () => {hints[page-1] = !hints[page-1];updateQuestionState();};
+$('resolve').onclick = () => {revealed[page-1] = !revealed[page-1];updateQuestionState();};
+if(document.fullscreenEnabled && document.documentElement.requestFullscreen){
+  $('full').hidden = false;
+  $('full').onclick = async () => {
+    try {
+      if(document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    } catch {
+      $('full').textContent = 'Tela cheia indisponível';
+    }
+  };
+  document.addEventListener('fullscreenchange',() => {
+    $('full').textContent = document.fullscreenElement ? 'Sair da tela cheia' : 'Tela cheia';
+  });
+}
+
+const canvas = $('canvas');
+const context = canvas.getContext('2d');
+const drawings = Array.from({length:lastPage+1},() => []);
+const swatches = [...$('board').querySelectorAll('[data-color]')];
+let tool = 'pen';
+let color = swatches[0].dataset.color;
+let active = null;
+let pointer = null;
+
+function boardIsOpen(){
+  return !$('board').hidden;
+}
+function setBoard(open){
+  finishStroke();
+  $('board').hidden = !open;
+  $('layout').classList.toggle('with-board',open);
+  $('toggleBoard').textContent = open ? 'Ocultar lousa' : 'Abrir lousa';
+  $('toggleBoard').setAttribute('aria-expanded',open);
+  if(open){
+    renderBoard();
+    if(window.matchMedia('(max-width: 950px)').matches) $('board').scrollIntoView({block:'start'});
+  }
+}
+$('toggleBoard').onclick = () => setBoard(!boardIsOpen());
+$('closeBoard').onclick = () => {setBoard(false);$('toggleBoard').focus();};
+function setTool(value){
+  tool = value;
+  $('pen').setAttribute('aria-pressed',tool === 'pen');
+  $('eraser').setAttribute('aria-pressed',tool === 'eraser');
+  swatches.forEach(button => button.setAttribute('aria-pressed',tool === 'pen' && button.dataset.color === color));
+}
+$('pen').onclick = () => setTool('pen');
+$('eraser').onclick = () => setTool('eraser');
+swatches.forEach(button => {
+  button.onclick = () => {
+    color = button.dataset.color;
+    setTool('pen');
+  };
+});
+function updateBoardControls(){
+  const hasDrawing = drawings[page].length > 0;
+  $('undo').disabled = !hasDrawing;
+  $('clearBoard').disabled = !hasDrawing || drawings[page].at(-1).clear;
+}
+function renderBoard(){
+  if(!boardIsOpen()) return;
+  const ratio = window.devicePixelRatio || 1;
+  const width = Math.max(1,Math.round(canvas.clientWidth*ratio));
+  const height = Math.max(1,Math.round(canvas.clientHeight*ratio));
+  if(canvas.width !== width) canvas.width = width;
+  if(canvas.height !== height) canvas.height = height;
+  context.clearRect(0,0,width,height);
+  drawings[page].forEach(stroke => {
+    if(stroke.clear) context.clearRect(0,0,width,height);
+    else {
+      paint(stroke,stroke.points[0],stroke.points[0]);
+      for(let index = 1; index < stroke.points.length; index++){
+        paint(stroke,stroke.points[index-1],stroke.points[index]);
+      }
+    }
+  });
+  updateBoardControls();
+  $('boardStatus').textContent = page === 0 ? 'Rascunho da revisão' : page === lastPage ? 'Rascunho do gabarito' : 'Rascunho da questão ' + page;
+}
+function paint(stroke,start,end){
+  const width = canvas.width;
+  const height = canvas.height;
+  const thickness = (stroke.erase ? 18 : 3.5) * (window.devicePixelRatio || 1);
+  context.globalCompositeOperation = stroke.erase ? 'destination-out' : 'source-over';
+  context.strokeStyle = context.fillStyle = stroke.color;
+  context.lineWidth = thickness;
+  context.lineCap = 'round';
+  context.beginPath();
+  if(start === end){
+    context.arc(start.x*width,start.y*height,thickness/2,0,2*Math.PI);
+    context.fill();
+  } else {
+    context.moveTo(start.x*width,start.y*height);
+    context.lineTo(end.x*width,end.y*height);
+    context.stroke();
+  }
+}
+function point(event){
+  const rect = canvas.getBoundingClientRect();
+  return {
+    x: (event.clientX - rect.left - canvas.clientLeft) / canvas.clientWidth,
+    y: (event.clientY - rect.top - canvas.clientTop) / canvas.clientHeight
+  };
+}
+canvas.addEventListener('pointerdown',event => {
+  if(active || event.button !== 0) return;
+  event.preventDefault();
+  pointer = event.pointerId;
+  canvas.setPointerCapture(pointer);
+  const start = point(event);
+  active = {erase:tool === 'eraser',color,points:[start]};
+  drawings[page].push(active);
+  paint(active,start,start);
+  updateBoardControls();
+});
+canvas.addEventListener('pointermove',event => {
+  if(!active || event.pointerId !== pointer) return;
+  const end = point(event);
+  paint(active,active.points.at(-1),end);
+  active.points.push(end);
+});
+function finishStroke(){
+  const captured = pointer;
+  active = null;
+  pointer = null;
+  if(captured !== null && canvas.hasPointerCapture(captured)) canvas.releasePointerCapture(captured);
+}
+['pointerup','pointercancel','lostpointercapture'].forEach(type => canvas.addEventListener(type,event => {
+  if(event.pointerId === pointer) finishStroke();
+}));
+$('undo').onclick = () => {finishStroke();drawings[page].pop();renderBoard();};
+$('clearBoard').onclick = () => {finishStroke();drawings[page].push({clear:true});renderBoard();};
+new ResizeObserver(renderBoard).observe(canvas);
+document.addEventListener('keydown',event => {
+  if(event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+  if(event.target.matches('button,input,textarea,select,a')) return;
+  if(event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+    event.preventDefault();
+    go(page + (event.key === 'ArrowLeft' ? -1 : 1));
+  }
+});
+go(0,false);
+</script>
+</body>
+</html>
